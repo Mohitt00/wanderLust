@@ -44,6 +44,12 @@ app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
 
+app.get("/",(req,res)=>{
+   res.redirect("/listings");
+})
+
+
+
 const store = Mongostore.create({
     mongoUrl: dbUrl,
     crypto:{
